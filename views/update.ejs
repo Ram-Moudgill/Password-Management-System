@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' href='/css/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title><%= title %></title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row colorbg2">
+            <div class="col-md-10 mx-auto">
+                <nav class="navbar navbar-expand-lg nav__design">
+                    <a class="navbar-brand" href="#">Your Password Locker</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars text-white" aria-hidden="true"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/logout">Logout</i></a>
+                            </li>
+                            <li class="nav-item">
+                                <p class="nav-link">Welcome &nbsp;<%= username%></p>
+                              </li>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-8 mx-auto my-3">
+            <h5 class=" color2">Update Password</h5>
+            <form method="POST" class="text-center border border-light p-5" action="/update">
+                <input type="text" class="form-control" name="id" value="<%= data._id%>" id='id' placeholder="id" required hidden>
+                <label class="w-100 text-left" for="select__cat">Password Title</label>
+                <input type="text" class="form-control mb-2" name="title" id='title'  value="<%= data.title%>"  placeholder="Title" required>
+                <div class="form-group">
+                    <label class="text-left w-100" for="add__pass">Update Password</label>
+                    <textarea class="form-control rounded-0" id="add__pass" rows="3" placeholder="Message"
+                        name="password%" required><%= data.password%></textarea>
+                </div>
+                <button class="btn btn-info btn-block" type="submit">Update Password</button>
+            </form>
+
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

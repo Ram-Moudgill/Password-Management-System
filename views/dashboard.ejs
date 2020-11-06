@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' href='/css/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title><%= title %></title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row colorbg2">
+            <div class="col-md-10 mx-auto">
+                <nav class="navbar navbar-expand-lg nav__design">
+                    <a class="navbar-brand" href="#">Password Locker</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <i class="fa fa-bars text-white" aria-hidden="true"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                          <a class="nav-link" href="/logout">Logout</i></a>
+                        </li>
+                        <li class="nav-item">
+                          <p class="nav-link">Welcome &nbsp;<%= username%></p>
+                        </li>
+
+                    </div>
+                  </nav>
+                  </div>
+            </div>
+        <div class="row">
+            <div class="col-md-10 mx-auto mt-4 mb-3">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Add Password
+                </button>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Add New Password</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="POST" class="text-center border border-light p-5" action="/addpassword">
+                                    <label class="w-100 text-left" for="select__cat">Password Title</label>
+                                    <input type="text" class="form-control" name="title" id='title' placeholder="Title" required>
+                                    <div class="form-group">
+                                        <label class="text-left w-100" for="add__pass">Add Password</label>
+                                        <textarea class="form-control rounded-0" id="add__pass" rows="3"
+                                            placeholder="Message" name="passdetail" required></textarea>
+                                    </div>
+                                    <button class="btn btn-info btn-block" type="submit">Add Password</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% data.forEach((newdata)=>{ %>
+                            <tr>
+                            <td><%= newdata.title%></td>
+                            <td><%= newdata.password%></td>
+                            <td><a href="/update/<%= newdata._id%>"><i class="fa fa-edit color2 pl-1 pr-2" aria-hidden="true"></i></a><a href="/delete/<%= newdata._id%>"><i class="fa fa-trash color2 px-2" aria-hidden="true"></i></a></td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+    <!-- Default form login -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

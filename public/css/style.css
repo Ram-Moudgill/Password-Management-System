@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.colorbg2 {
+  background: #f46f88 !important;
+}
+.color2 {
+  color: #f46f88 !important;
+}
+.btn {
+  background-color: #f46f88 !important;
+  border: 2px solid #f46f88 !important;
+}
+.signin__row {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input__design {
+  border: none !important;
+  border-bottom: 1px solid rgba(43, 42, 42, 0.432) !important;
+}
+input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.navbar {
+  background-color: #f46f88 !important;
+  color: #fff !important ;
+}
+.nav-link {
+  color: #fff;
+}
+.nav-link:hover {
+  opacity: 0.7 !important;
+  color: #fff;
+}
+.navbar-brand {
+  color: #fff;
+}
+.navbar-brand:hover {
+  color: #fff !important;
+  opacity: 0.7;
+}

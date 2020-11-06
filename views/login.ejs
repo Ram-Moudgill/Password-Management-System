@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' href='/css/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Login</title>
+</head>
+
+<body>
+   <div class="container">
+    <div class="row signin__row">
+     <div class="col-md-5 mx-auto ">
+        <% if (msg) { %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Warning!</strong><%= msg %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+          <% } %>
+     <form class="text-center" action="/" method="POST">
+    <p class="h4 mb-4 color2">Sign in</p>
+    <input type="username" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="username" name="username" required>
+    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" name="password" required>
+    <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+    <p class="color2">Not a member?
+        <a class="color2" href="/signup">Register</a>
+    </p>
+    <p class="color2">or sign in with:</p>
+
+    <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f color2"></i></a>
+    <a href="#" class="mx-2" role="button"><i class="fab fa-twitter color2"></i></a>
+    <a href="#" class="mx-2" role="button"><i class="fab fa-linkedin-in color2"></i></a>
+    <a href="#" class="mx-2" role="button"><i class="fab fa-github color2"></i></a>
+
+</form>
+</div>
+</div>
+</div>
+<!-- Default form login -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
